@@ -1,0 +1,17 @@
+1) Include Prototype Js > 1.6
+2) Include carousel.js         
+3) Write a div like this
+	<div id='carouselDiv'>
+	 	<a id='myLink1' ><img src='my_image_path_1.jpg'></img></a>
+	 	<a id='myLink2' ><img src='my_image_path_2.jpg'></img></a>
+	 	<a id='myLink3' ><img src='my_image_path_3.jpg'></img></a>
+	</div>           
+	
+3) On document ready
+   carouselMain = new Carousel('carouselDiv');  
+
+4) Have Fun
+
+More docs soon
+
+PB
