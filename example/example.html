@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Image-Carousel JS Example Page</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Piero Bozzolo">
+	<!-- Date: 2010-12-17 -->            
+	<script type="text/javascript" src='prototype.js'></script>
+	<script type="text/javascript" src="scriptaculous.js?load=effects"></script>
+	<script type="text/javascript" src='../carousel.js'></script>	 
+	<script type="text/javascript">
+		Event.observe(window, 'load', function() {  
+	   		carousel = new Carousel('myCarousel');			
+		});
+	</script>   
+</head>
+<body>                                           
+	<h1>Usage Example for Image Carousel</h1>
+	<h1>All photos taken by the author</h1>	
+	<div id='myCarousel' style='min-height:518px'>
+		<a href='#' id='biscuitsFactory'><img src='images/biscuitsFactory.JPG'></img></a>
+		<a href='#' id='enough'><img src='images/enough.JPG'></img></a>
+		<a href='#' id='macClassic'><img src='images/macClassic.jpg'></img></a>
+		<a href='#' id='sinclairSpectrum'><img src='images/sinclairSpectrum.JPG'></img></a>
+		<a href='#' id='sinclairZx80'><img src='images/sinclairZx80.jpg'></img></a>
+		<a href='#' id='sushi'><img src='images/sushi.jpg'></img></a>		
+	</div>
+	
+	<div id='controls'>
+	   <span onClick="carousel.prevImage()">Prev Image</span> | <span onClick="carousel.nextImage()">Next Image</span> 
+	   <br/>	
+	   <img onClick="carousel.gotoImage('biscuitsFactory')" src='images/biscuitsFactory.JPG' style='width:50px'></img></a>
+	   <img onClick="carousel.gotoImage('enough')" src='images/enough.JPG' style='width:50px'></img>
+	   <img onClick="carousel.gotoImage('macClassic')" src='images/macClassic.jpg' style='width:50px'></img>
+	   <img onClick="carousel.gotoImage('sinclairSpectrum')" src='images/sinclairSpectrum.JPG' style='width:50px'></img>
+	   <img onClick="carousel.gotoImage('sinclairZx80')" src='images/sinclairZx80.jpg' style='width:50px'></img>
+	   <img onClick="carousel.gotoImage('sushi')" src='images/sushi.jpg' style='width:50px'></img>
+	</div>	
+</body>
+</html>
+         
+
+
+
+
