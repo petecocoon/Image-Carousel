@@ -1,4 +1,4 @@
-1) Include Prototype Js > 1.6
+1) Include jQuery
 2) Include carousel.js         
 3) Write a div like this
 	<div id='carouselDiv'>
