@@ -34,20 +34,20 @@ function Carousel(divId) {
 		this.semDown();
 		if( this.isNotPlaying() ) return;
 		if( this.listIsReversed ) this.reverseImageList();
-		this.listOfImages = $(this.div).childElements();
-		this.listOfImages.each(function(image){	image.hide(); });
+		this.listOfImages = $("#" +  this.div + " > *").toArray();    
+		$("#" +  this.div + " > *").each(function(){	$(this).hide(); });  
 		this.currentViewedImage = this.listOfImages.shift();
-		this.currentViewedImage.appear();
+		$(this.currentViewedImage).fadeIn();
 		
-		setTimeout(function() { _this.nextImageCarousel(); }, 1100);
+		setTimeout(function() { _this.nextImageCarousel(); }, 1100);  
 	}
 	
 	this.nextImageCarousel = function() {
 		if( this.isNotPlaying() ) return;
-		this.currentViewedImage.fade();
+		$(this.currentViewedImage).fadeOut();
 		this.listOfImages.push(this.currentViewedImage);
 		this.currentViewedImage = this.listOfImages.shift();
-		setTimeout(function() { _this.currentViewedImage.appear(); }, 1100);
+		setTimeout(function() {$(_this.currentViewedImage).fadeIn(); }, 1100);
 		setTimeout(function() { _this.nextImageCarousel(); }, 5000);//intervallo tra una diapositiva e l'altra
 	}
 	
@@ -77,13 +77,13 @@ function Carousel(divId) {
 	
 	this.gotoImage = function(elementID){
 		this.semUp();
-		element2Show = $(elementID);
+		element2Show = $('#' + elementID);
 		for(var i=0; i < this.listOfImages.length; i++){
-			if(element2Show.identify() == this.listOfImages[i].identify()){
-				this.currentViewedImage.hide();
+			if($(element2Show).attr('id') == $(this.listOfImages[i]).attr('id')){
+				$(this.currentViewedImage).hide();
 				this.listOfImages.push(this.currentViewedImage);
 				this.currentViewedImage = this.listOfImages[i];						
-				this.currentViewedImage.show();	
+				$(this.currentViewedImage).show();	
 				setTimeout(function() { _this.start(); }, 6000);
 				return;
 			}
